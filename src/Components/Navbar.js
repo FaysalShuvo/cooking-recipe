@@ -6,10 +6,10 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <nav >
+      <nav>
         <Link to="/">
           <h1>Cooking Recipe</h1>
-        </Link> 
+        </Link>
         <Link to="create-recipe">Create Recipe</Link>
       </nav>
     </div>

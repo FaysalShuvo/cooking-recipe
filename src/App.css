@@ -1,4 +1,5 @@
 body {
   font-size: 1rem;
+  box-sizing: border-box;
   font-family: "Patrick Hand", cursive;
 }
