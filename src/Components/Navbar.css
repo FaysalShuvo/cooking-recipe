@@ -10,17 +10,21 @@
   align-items: center;
   justify-content: space-between;
 }
+.navbar div {
+  display: flex;
+  align-items: center;
+}
 
 .navbar a {
   color: #fff;
   text-decoration: none;
 }
-
 .navbar a:last-child {
-  border: 3px solid #c7417b;
+  box-shadow: inset 0 0 0 1px rgb(255, 255, 255);
   font-size: 1.1rem;
   border-radius: 10px;
-  padding: 1px 8px;
+  padding: 3px 10px;
+  text-align: center;
   transition: all 0.3s;
 }
 .navbar a:last-child:active {
