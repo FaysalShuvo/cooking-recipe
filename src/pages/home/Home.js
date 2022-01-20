@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <div className="home">
         {error && <div>{error}</div>}
-        {isPending && <div>loading....</div>}
+        {isPending && <div className="loading">loading....</div>}
         {data && <RecipeList recipes={data} />}
       </div>
     </>

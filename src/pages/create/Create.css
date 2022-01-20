@@ -1,0 +1,36 @@
+.create {
+  max-width: 460px;
+  margin: 0px auto;
+}
+.create em {
+  margin-left: 4px;
+  color: #555;
+}
+.create .ingredients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingredients .btn {
+  margin-left: 5px !important;
+  padding: 5px;
+}
+.create label,
+input {
+  margin-bottom: 5px;
+}
+.create .btn {
+  background-color: #f5487f;
+  margin-top: 10px;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+}
+
+.create .btn:hover {
+  background-color: #c7417b;
+  color: #fff;
+}
