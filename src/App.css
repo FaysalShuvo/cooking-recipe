@@ -3,3 +3,9 @@ body {
   box-sizing: border-box;
   font-family: "Patrick Hand", cursive;
 }
+.App {
+  min-height: 100vh;
+}
+.App.dark {
+  background: #333;
+}

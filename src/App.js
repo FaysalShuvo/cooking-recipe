@@ -7,12 +7,16 @@ import Create from "./pages/create/Create";
 import Search from "./pages/search/Search";
 import Recipe from "./pages/recipe/Recipe";
 import Navbar from "./Components/Navbar";
+import ThemeSelector from "./Components/ThemeSelector";
+import { useTheme } from "./hooks/useTheme";
 
 function App() {
+  const { mode } = useTheme();
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       <BrowserRouter>
         <Navbar />
+        <ThemeSelector />
         <Routes>
           <Route index element={<Home />} />
           <Route path="create-recipe" element={<Create />} />

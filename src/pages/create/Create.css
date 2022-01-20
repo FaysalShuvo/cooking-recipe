@@ -24,10 +24,13 @@ input {
   background-color: #f5487f;
   margin-top: 10px;
   text-align: center;
+  padding: 10px;
   transition: all 0.3s;
   color: #fff;
   display: block;
   margin: 0 auto;
+  border: none;
+  cursor: pointer;
 }
 
 .create .btn:hover {
