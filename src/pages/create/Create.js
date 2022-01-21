@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import { useTheme } from "../../hooks/useTheme";
 import "./Create.css";
 
 const Create = () => {
@@ -11,6 +12,7 @@ const Create = () => {
   const [ingredients, setIngredients] = useState([]);
   const ingredientInput = useRef(null);
   let navigate = useNavigate();
+  const { mode } = useTheme();
 
   const { postData, data, error } = useFetch(
     "http://localhost:3000/recipes",
@@ -49,7 +51,7 @@ const Create = () => {
     ingredientInput.current.focus();
   };
   return (
-    <div className="create">
+    <div className={`create ${mode}`}>
       <h2 className="page-title">Add A New Recipe: </h2>
       <form onSubmit={handleSubmit}>
         <label>

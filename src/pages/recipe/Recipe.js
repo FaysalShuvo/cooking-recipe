@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useFetch } from "../../hooks/useFetch";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { projectFirestore } from "../../firebase/config";
 // style
 import "./Recipe.css";
 
@@ -8,10 +8,28 @@ const Recipe = () => {
   const { id } = useParams();
   let navigate = useNavigate();
 
-  const { data, error, isPending } = useFetch(
-    `http://localhost:3000/recipes/${id}`
-  );
-  
+  const [data, setData] = useState(null);
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setIsPending(true);
+
+    projectFirestore
+      .collection("recipes")
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setIsPending(false);
+          setData(doc.data());
+        } else {
+          setIsPending(false);
+          setError("could not fetch recipe");
+        }
+      });
+  }, [id]);
+
   useEffect(() => {
     if (error) {
       setTimeout(() => {
@@ -26,7 +44,7 @@ const Recipe = () => {
       {data && (
         <>
           <h2 className="page-title">{data.title}</h2>
-          <p>Takes {data.cookingTime} to cook.</p>
+          <p>Takes {data.cookingTime} minutes to cook.</p>
           <ul>
             {data.ingredients.map((ing) => (
               <li key={ing}>{ing}</li>

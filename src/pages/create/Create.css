@@ -32,6 +32,12 @@ input {
   border: none;
   cursor: pointer;
 }
+.create.dark p,
+.create.dark h2,
+.create.dark em,
+.create.dark label {
+  color: #fff;
+}
 
 .create .btn:hover {
   background-color: #c7417b;
