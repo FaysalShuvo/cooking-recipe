@@ -21,8 +21,8 @@ code {
 
 .page-title {
   text-align: center;
-  margin: 40px auto;
-  color: #333;
+  margin: 10px auto;
+  color: rgb(43, 43, 43);
 }
 
 .loading,
