@@ -9,6 +9,7 @@ import Recipe from "./pages/recipe/Recipe";
 import Navbar from "./Components/Navbar";
 import ThemeSelector from "./Components/ThemeSelector";
 import { useTheme } from "./hooks/useTheme";
+import Footer from "./Components/Footer";
 
 function App() {
   const { mode } = useTheme();
@@ -23,6 +24,7 @@ function App() {
           <Route path="search-recipe" element={<Search />} />
           <Route path="recipes/:id" element={<Recipe />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
